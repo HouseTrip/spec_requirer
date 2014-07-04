@@ -1,5 +1,10 @@
 # SpecRequirer
 
+[![Gem Version](https://badge.fury.io/rb/spec_requirer.png)](http://badge.fury.io/rb/spec_requirer)
+[![Code Climate](https://codeclimate.com/github/krisleech/spec_requirer.png)](https://codeclimate.com/github/krisleech/spec_requirer)
+[![Build Status](https://travis-ci.org/krisleech/spec_requirer.png?branch=master)](https://travis-ci.org/krisleech/spec_requirer)
+[![Coverage Status](https://coveralls.io/repos/krisleech/spec_requirer/badge.png?branch=master)](https://coveralls.io/r/krisleech/spec_requirer?branch=master)
+
 Helps require files and manage the `LOAD_PATH` of application unit tests which 
 do not boot the framework.
 

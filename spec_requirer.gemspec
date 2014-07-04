@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = SpecRequirer::VERSION
   spec.authors       = ["Kris Leech"]
   spec.email         = ["kleech@housetrip.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = 'Explicitly require files and manage LOAD_PATH in tests which do not boot a framework'
+  spec.description   = 'Explicitly require files and manage LOAD_PATH in tests which do not boot a framework'
+  spec.homepage      = "https://github.com/krisleech/spec_requirer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

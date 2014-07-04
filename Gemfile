@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in spec_requirer.gemspec
 gemspec
+
+gem 'rubysl', '~> 2.0', :platforms => :rbx
+
+gem 'coveralls', require: false
+
+group :metrics do
+  gem 'flay'
+end
