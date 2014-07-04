@@ -1,8 +1,5 @@
-require 'singleton'
-
 module SpecRequirer
   class Loader
-    include Singleton
 
     def uses_models
       add_to_load_path(app_root.join('models'))
@@ -14,12 +11,12 @@ module SpecRequirer
 
     private
 
-    # needs a configuration option
     def app_root
-      Pathname(File.dirname(__FILE__))
+      SpecRequirer.configuration.app_root
     end
 
     def add_to_load_path(path)
+      path = path.to_s
       $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
     end
   end

@@ -7,7 +7,7 @@ module SpecRequirer
     class MissingConfiguration < StandardError; end
 
     def app_root
-      raise MissingConfiguration, 'app_root not set' if @app_path.nil?
+      raise MissingConfiguration, 'app_root not set' if @app_root.nil?
       @app_root
     end
   end

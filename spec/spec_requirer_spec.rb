@@ -16,10 +16,19 @@ describe SpecRequirer do
     end
   end
 
+  describe '#setup options' do
+    it 'accepts configuration' do
+      subject.setup(app_root: '/foo')
+      expect(subject.configuration.app_root).to eq '/foo'
+    end
+  end
+
   describe '#uses_models' do
     let(:app_root) { Pathname(File.dirname(__FILE__)).join('app') }
 
-    before { subject.setup }
+    before do
+      subject.setup(app_root: app_root)
+    end
 
     it 'add model path to LOAD_PATH' do
       Kernel.uses_models
