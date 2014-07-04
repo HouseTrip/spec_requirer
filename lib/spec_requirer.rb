@@ -1,4 +1,5 @@
 require 'spec_requirer/version'
+require 'spec_requirer/configuration'
 require 'spec_requirer/loader'
 
 module SpecRequirer
@@ -18,5 +19,13 @@ module SpecRequirer
     end
 
     Kernel.extend(container)
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
   end
 end
