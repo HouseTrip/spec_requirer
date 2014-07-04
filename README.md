@@ -27,7 +27,8 @@ In your `spec_helper`:
 require 'pathname'
 require 'spec_requirer'
 
-SpecRequirer.setup(app_root: Pathname(__FILE__).join('..', '..'))
+SpecRequirer.setup(app_root: Pathname(File.dirname(__FILE__)).join('..', '..'),
+                   components: ['models', 'controllers', 'presenters'])
 ```
 
 ### Require helpers

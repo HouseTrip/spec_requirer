@@ -4,8 +4,11 @@ module SpecRequirer
   class Configuration
     class MissingConfiguration < StandardError; end
 
+    attr_accessor :components
+
     def clear
       @app_root = nil
+      @components = nil
     end
 
     def app_root

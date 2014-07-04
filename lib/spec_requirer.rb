@@ -14,27 +14,7 @@ module SpecRequirer
       configuration.send("#{k}=", v)
     end
 
-    container = Module.new do
-      def respond_to?(method_name)
-        [:uses_models, :require_model].include?(method_name) || super
-      end
-
-      def uses_models
-        __loader.uses_models
-      end
-
-      def require_model(name)
-        __loader.require_model(name)
-      end
-
-      private
-
-      def __loader
-        @loader ||= Loader.new
-      end
-    end
-
-    Kernel.extend(container)
+    Kernel.extend(Loader.new(configuration))
   end
 
   def self.configuration
