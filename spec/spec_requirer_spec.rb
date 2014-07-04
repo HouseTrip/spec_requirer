@@ -1,6 +1,4 @@
 describe SpecRequirer do
-  before { SpecRequirer.configuration.clear }
-
   describe '#setup' do
     before { subject.setup }
 

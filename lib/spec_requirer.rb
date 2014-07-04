@@ -38,7 +38,7 @@ module SpecRequirer
   end
 
   def self.configuration
-    @configuration ||= Configuration.new
+    @configuration ||= Configuration.new # TODO: thread-safe...
   end
 
   def self.configure
