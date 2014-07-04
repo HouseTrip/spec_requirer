@@ -16,8 +16,10 @@ Require only what you need, keep it light and explicit.
 ## Installation
 
 ```ruby
-gem 'spec_requirer', group: :test
+gem 'spec_requirer', group: :test, github: 'krisleech/requirer', tag: 'v0.0.1'
 ```
+
+This is not released to Rubygems yet.
 
 ## Usage
 
