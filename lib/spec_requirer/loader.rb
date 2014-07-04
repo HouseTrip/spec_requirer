@@ -6,7 +6,7 @@ module SpecRequirer
     end
 
     def require_model(name)
-      require app_root.join('models', name.to_s)
+      require app_root.join('models', name.to_s).to_s
     end
 
     private

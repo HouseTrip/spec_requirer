@@ -1,4 +1,5 @@
 describe SpecRequirer do
+  before { SpecRequirer.configuration.clear }
 
   describe '#setup' do
     before { subject.setup }
@@ -19,7 +20,7 @@ describe SpecRequirer do
   describe '#setup options' do
     it 'accepts configuration' do
       subject.setup(app_root: '/foo')
-      expect(subject.configuration.app_root).to eq '/foo'
+      expect(subject.configuration.app_root.to_s).to eq '/foo'
     end
   end
 
@@ -39,7 +40,7 @@ describe SpecRequirer do
   describe '#require_model' do
     let(:app_root) { Pathname(File.dirname(__FILE__)).join('app') }
 
-    before { subject.setup }
+    before { subject.setup(app_root: app_root) }
 
     it 'requires a model file' do
       expect { Kernel.require_model(:user) }.to_not raise_error
