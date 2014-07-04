@@ -21,6 +21,8 @@ gem 'spec_requirer', group: :test
 
 ## Usage
 
+In your `spec_helper`:
+
 ```ruby
 require 'pathname'
 require 'spec_requirer'
