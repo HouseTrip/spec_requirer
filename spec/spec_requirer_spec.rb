@@ -29,7 +29,7 @@ describe SpecRequirer do
       subject.setup(app_root: app_root)
     end
 
-    it 'add model path to LOAD_PATH' do
+    it 'adds models path to LOAD_PATH' do
       Kernel.uses_models
       expect($LOAD_PATH).to include app_root.join('models').to_s
     end

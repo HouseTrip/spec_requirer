@@ -1,6 +1,10 @@
 module SpecRequirer
   class Loader
 
+    def initialize(configuration)
+      @configuration = configuration || SpecRequirer.configuration
+    end
+
     def uses_models
       add_to_load_path(app_root.join('models'))
     end
@@ -11,8 +15,10 @@ module SpecRequirer
 
     private
 
+    attr_reader :configuration
+
     def app_root
-      SpecRequirer.configuration.app_root
+      configuration.app_root
     end
 
     def add_to_load_path(path)
