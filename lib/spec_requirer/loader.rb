@@ -6,11 +6,6 @@ module SpecRequirer
       define_methods
     end
 
-    def add_to_load_path(path)
-      path = path.to_s
-      $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
-    end
-
     def included(descendant)
       super
       descendant.class_eval { include Methods }
