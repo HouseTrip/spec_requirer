@@ -2,16 +2,16 @@ describe SpecRequirer do
   describe '#setup' do
     before { subject.setup(components: ['models']) }
 
-    it 'adds Kernal#uses_models' do
-      expect(Kernel).to respond_to :uses_models
+    it 'adds Object#uses_models' do
+      expect(Object).to respond_to :uses_models
     end
 
-    it 'adds Kernal#require_model' do
-      expect(Kernel).to respond_to :require_models
+    it 'adds Object#require_model' do
+      expect(Object).to respond_to :require_models
     end
 
-    it 'does not break Kernal#respond_to' do
-      expect(Kernel).to respond_to :puts
+    it 'does not break Object#respond_to' do
+      expect(Object).to respond_to :object_id
     end
   end
 

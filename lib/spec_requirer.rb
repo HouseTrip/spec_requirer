@@ -9,12 +9,9 @@ end
 
 module SpecRequirer
   def self.setup(config_options = {})
+    config_options.each { |k,v| configuration.send("#{k}=", v) }
 
-    config_options.each do |k,v|
-      configuration.send("#{k}=", v)
-    end
-
-    Kernel.extend(Loader.new(configuration))
+    Object.include(Loader.new(configuration))
   end
 
   def self.configuration

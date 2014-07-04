@@ -11,9 +11,9 @@ module SpecRequirer
       $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
     end
 
-    def extended(descendant)
+    def included(descendant)
       super
-      descendant.module_eval { extend Methods }
+      descendant.class_eval { include Methods }
     end
 
     def define_methods
