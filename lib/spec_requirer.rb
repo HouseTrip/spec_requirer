@@ -11,7 +11,7 @@ module SpecRequirer
   def self.setup(config_options = {})
     config_options.each { |k,v| configuration.send("#{k}=", v) }
 
-    Object.include(Loader.new(configuration))
+    Object.send(:include, Loader.new(configuration))
   end
 
   def self.configuration

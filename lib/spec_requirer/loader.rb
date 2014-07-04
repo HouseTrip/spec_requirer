@@ -19,19 +19,33 @@ module SpecRequirer
     def define_methods
       @configuration.components.each do |component|
         define_method "uses_#{component}" do
-          add_to_load_path(SpecRequirer.configuration.app_root.join(component))
+          uses(component)
         end
 
         define_method "require_#{component}" do |*names|
           names.each do |name|
-            require SpecRequirer.configuration.app_root.join(component, name.to_s).to_s
+            require app_root.join(component, name.to_s).to_s
           end
         end
       end
     end
 
     module Methods
+      def uses(*components)
+        components.each do |component|
+          add_to_load_path(app_root.join(component.to_s))
+        end
+      end
+
       private
+
+      def app_root
+        configuration.app_root
+      end
+
+      def configuration
+        SpecRequirer.configuration
+      end
 
       def add_to_load_path(path)
         path = path.to_s

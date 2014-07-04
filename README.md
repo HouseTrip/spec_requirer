@@ -21,35 +21,33 @@ gem 'spec_requirer', group: :test
 
 ## Usage
 
-In your `spec_helper`:
+In your `test_helper` / `spec_helper`:
 
 ```ruby
 require 'pathname'
 require 'spec_requirer'
 
-SpecRequirer.setup(app_root: Pathname(File.dirname(__FILE__)).join('..', '..'),
-                   components: ['models', 'controllers', 'presenters'])
+SpecRequirer.setup(app_root: Pathname(File.dirname(__FILE__)).join('..'),
+                   components: ['models', 'services', 'presenters'])
 ```
+
+In a Rails app the `app_root` would be the `app` directory.
 
 ### Require helpers
 
-For each sub-directory in your applications `app` directory a require helper is
-added which lets you do:
+For each component a require helper is added which lets you do:
 
 ```ruby
-require_model 'user'
-
 require_models 'user', 'reward', 'prize'
 
-require_presenter 'user_presenter'
+require_presenters 'user_presenter'
 
-require_service 'create_user'
+require_services 'create_user'
 ```
 
-### LOAD_PATH helpers
+### $LOAD_PATH helpers
 
-Similarly for each sub-directory a "uses" method is added which adds a
-directory to the LOAD_PATH:
+Similarly a "uses" method is added which adds a directory to the `$LOAD_PATH`:
 
 ```ruby
 uses_models
@@ -69,18 +67,26 @@ uses :models, :presenters, :services
 
 ## Configuration
 
+Commented out options are not yet implemented.
+
 ```ruby
 require 'pathname'
 require ‘spec_requirer’
 
 SpecRequirer.configure do |config|
-  config.app_root = Pathname(__FILE__).join('..', '..')
-  config.add_components(in: ‘app’, except: %’w(views, assets))
-  config.add_component(‘config/initializers’, as: ‘initializer’)
-  config.patch_kernel = true
+  config.app_root = Pathname(__FILE__).join('..')
+  # config.add_components(in: ‘app’, except: %’w(views, assets))
+  # config.add_component(‘config/initializers’, as: ‘initializer’)
+  # config.patch_kernel = true
 end
 
 SpecRequirer.setup
+```
+
+You can also pass some configuration directly to `setup` as such:
+
+```ruby
+SpecRequirer.setup(app_root: app_root, components: ['models', 'presenters'])
 ```
 
 ## Contributing
