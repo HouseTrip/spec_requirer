@@ -78,12 +78,12 @@ Commented out options are not yet implemented.
 
 ```ruby
 require 'pathname'
-require ‘spec_requirer’
+require 'spec_requirer'
 
 SpecRequirer.configure do |config|
   config.app_root = Pathname(__FILE__).join('..')
   # config.add_components(in: ‘app’, except: %’w(views, assets))
-  # config.add_component(‘config/initializers’, as: ‘initializer’)
+  # config.add_component('config/initializers', as: 'initializer')
   # config.patch_kernel = true
 end
 
