@@ -1,4 +1,4 @@
-Copyright (c) 2014 Kris Leech
+Copyright (c) 2014 HouseTrip Ltd
 
 MIT License
 
