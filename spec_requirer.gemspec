@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["kleech@housetrip.com"]
   spec.summary       = 'Explicitly require files and manage LOAD_PATH in tests which do not boot a framework'
   spec.description   = 'Explicitly require files and manage LOAD_PATH in tests which do not boot a framework'
-  spec.homepage      = "https://github.com/krisleech/spec_requirer"
+  spec.homepage      = "https://github.com/HouseTrip/spec_requirer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

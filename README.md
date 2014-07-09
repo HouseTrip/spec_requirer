@@ -1,9 +1,9 @@
 # SpecRequirer
 
 [![Gem Version](https://badge.fury.io/rb/spec_requirer.png)](http://badge.fury.io/rb/spec_requirer)
-[![Code Climate](https://codeclimate.com/github/krisleech/spec_requirer.png)](https://codeclimate.com/github/krisleech/spec_requirer)
-[![Build Status](https://travis-ci.org/krisleech/spec_requirer.png?branch=master)](https://travis-ci.org/krisleech/spec_requirer)
-[![Coverage Status](https://coveralls.io/repos/krisleech/spec_requirer/badge.png?branch=master)](https://coveralls.io/r/krisleech/spec_requirer?branch=master)
+[![Code Climate](https://codeclimate.com/github/HouseTrip/spec_requirer.png)](https://codeclimate.com/github/HouseTrip/spec_requirer)
+[![Build Status](https://travis-ci.org/HouseTrip/spec_requirer.png?branch=master)](https://travis-ci.org/HouseTrip/spec_requirer)
+[![Coverage Status](https://coveralls.io/repos/HouseTrip/spec_requirer/badge.png?branch=master)](https://coveralls.io/r/HouseTrip/spec_requirer?branch=master)
 
 Helps require files and manage the `LOAD_PATH` of application unit tests which 
 do not boot the framework.
@@ -21,7 +21,7 @@ Require only what you need, keep it light and explicit.
 ## Installation
 
 ```ruby
-gem 'spec_requirer', group: :test, github: 'krisleech/requirer', tag: 'v0.0.1'
+gem 'spec_requirer', group: :test, github: 'HouseTrip/spec_requirer', tag: 'v0.0.1'
 ```
 
 This is not released to Rubygems yet.
