@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/HouseTrip/spec_requirer.png?branch=master)](https://travis-ci.org/HouseTrip/spec_requirer)
 [![Coverage Status](https://coveralls.io/repos/HouseTrip/spec_requirer/badge.png?branch=master)](https://coveralls.io/r/HouseTrip/spec_requirer?branch=master)
 
-Helps require files and manage the `LOAD_PATH` of application unit tests which 
-do not boot the framework.
+Helps require files and manage the `$LOAD_PATH` of unit tests which do not boot
+a framework.
 
 For example in Rails if you want fast unit tests you do not boot Rails.
 However this means that "app/models" etc. are not added to the `LOAD_PATH`. 
@@ -54,7 +54,8 @@ require_services 'create_user'
 
 ### $LOAD_PATH helpers
 
-Similarly a "uses" method is added which adds a directory to the `$LOAD_PATH`:
+Similarly a "uses" method is available for each component which adds a
+directory to the `$LOAD_PATH`. You can then `require` the file as usual:
 
 ```ruby
 uses_models
