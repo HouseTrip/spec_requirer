@@ -6,9 +6,13 @@ module SpecRequirer
 
     attr_accessor :components
 
+    def initialize
+      @components = []
+    end
+
     def clear
       @app_root = nil
-      @components = nil
+      @components = []
     end
 
     def app_root
