@@ -1,5 +1,3 @@
-require 'pry'
-
 module SpecRequirer
   class Loader < Module
 
