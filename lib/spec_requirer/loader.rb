@@ -13,8 +13,8 @@ module SpecRequirer
 
     def define_methods
       @configuration.components.each do |component|
-        define_method "spec_uses_#{component}" do
-          spec_uses(component)
+        define_method "utilizes_#{component}" do
+          utilizes(component)
         end
 
         define_method "require_#{component}" do |*names|
@@ -26,7 +26,7 @@ module SpecRequirer
     end
 
     module Methods
-      def spec_uses(*components)
+      def utilizes(*components)
         components.each do |component|
           add_to_load_path(app_root.join(component.to_s))
         end

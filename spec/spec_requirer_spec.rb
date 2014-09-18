@@ -22,7 +22,7 @@ describe SpecRequirer do
 
     describe '#uses_models' do
       it 'adds models path to LOAD_PATH' do
-        class_under_test.spec_uses_models
+        class_under_test.utilizes_models
         expect($LOAD_PATH).to include app_root.join('models').to_s
       end
     end
@@ -37,7 +37,7 @@ describe SpecRequirer do
 
     describe '#uses' do
       it 'adds given components to LOAD_PATH' do
-        class_under_test.spec_uses :models, :presenters
+        class_under_test.utilizes :models, :presenters
         expect($LOAD_PATH).to include app_root.join('models').to_s
         expect($LOAD_PATH).to include app_root.join('presenters').to_s
       end

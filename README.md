@@ -54,13 +54,13 @@ require_services 'create_user'
 
 ### $LOAD_PATH helpers
 
-Similarly a "uses" method is available for each component which adds a
+Similarly a "utilizes" method is available for each component which adds a
 directory to the `$LOAD_PATH`. You can then `require` the file as usual:
 
 ```ruby
-spec_uses_models
-spec_uses_presenters
-spec_uses_services
+utilizes_models
+utilizes_presenters
+utilizes_services
 
 require 'user'
 require 'user_presenter'
@@ -70,7 +70,7 @@ require 'create_user'
 Or you can use the one-line version as such:
 
 ```ruby
-spec_uses :models, :presenters, :services
+utilizes :models, :presenters, :services
 ```
 
 ## Configuration

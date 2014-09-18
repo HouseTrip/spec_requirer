@@ -13,9 +13,9 @@ describe SpecRequirer::Loader do
   describe "extended" do
     before { subject.extend(SpecRequirer::Loader.new(configuration))  }
 
-    it 'creates spec_uses_* methods for each component in configuration' do
+    it 'creates utilizes_* methods for each component in configuration' do
       components.each do |component|
-        expect(subject).to respond_to "spec_uses_#{component}"
+        expect(subject).to respond_to "utilizes_#{component}"
       end
     end
 
@@ -31,8 +31,8 @@ describe SpecRequirer::Loader do
 
     before { subject.include(SpecRequirer::Loader.new(configuration)) }
 
-    it 'creates a uses method' do
-      expect(class_under_test).to respond_to(:spec_uses)
+    it 'creates a utilizes method' do
+      expect(class_under_test).to respond_to(:utilizes)
     end
   end
 end
