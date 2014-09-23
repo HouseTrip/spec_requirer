@@ -9,7 +9,7 @@ Helps require files and manage the `$LOAD_PATH` of unit tests which do not boot
 a framework.
 
 For example in Rails if you want fast unit tests you do not boot Rails.
-However this means that "app/models" etc. are not added to the `LOAD_PATH`. 
+However this means that "app/models" etc. are not added to the `LOAD_PATH`.
 This typically means you need to either add the paths or use `require_relative`.
 
 * Explicit requiring of files
@@ -21,7 +21,7 @@ Require only what you need, keep it light and explicit.
 ## Installation
 
 ```ruby
-gem 'spec_requirer', group: :test, github: 'HouseTrip/spec_requirer', tag: 'v0.0.1'
+gem 'spec_requirer', group: :test, github: 'HouseTrip/spec_requirer', tag: 'v0.0.2'
 ```
 
 This is not released to Rubygems yet.
@@ -34,7 +34,7 @@ In your `test_helper` / `spec_helper`:
 require 'pathname'
 require 'spec_requirer'
 
-SpecRequirer.setup(app_root: Pathname(File.dirname(__FILE__)).join('..'),
+SpecRequirer.setup(app_root: File.join(File.dirname(__FILE__), ".."),
                    components: ['models', 'services', 'presenters'])
 ```
 
@@ -54,13 +54,13 @@ require_services 'create_user'
 
 ### $LOAD_PATH helpers
 
-Similarly a "uses" method is available for each component which adds a
+Similarly a "utilizes" method is available for each component which adds a
 directory to the `$LOAD_PATH`. You can then `require` the file as usual:
 
 ```ruby
-uses_models
-uses_presenters
-uses_services
+utilizes_models
+utilizes_presenters
+utilizes_services
 
 require 'user'
 require 'user_presenter'
@@ -70,7 +70,7 @@ require 'create_user'
 Or you can use the one-line version as such:
 
 ```ruby
-uses :models, :presenters, :services
+utilizes :models, :presenters, :services
 ```
 
 ## Configuration
@@ -89,6 +89,7 @@ SpecRequirer.configure do |config|
 end
 
 SpecRequirer.setup
+include SpecRequirer
 ```
 
 You can also pass some configuration directly to `setup` as such:

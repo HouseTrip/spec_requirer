@@ -6,15 +6,15 @@ module SpecRequirer
       define_methods
     end
 
-    def included(descendant)
+    def included(receiver)
       super
-      descendant.class_eval { include Methods }
+      receiver.send :include, Methods
     end
 
     def define_methods
       @configuration.components.each do |component|
-        define_method "uses_#{component}" do
-          uses(component)
+        define_method "utilizes_#{component}" do
+          utilizes(component)
         end
 
         define_method "require_#{component}" do |*names|
@@ -26,7 +26,7 @@ module SpecRequirer
     end
 
     module Methods
-      def uses(*components)
+      def utilizes(*components)
         components.each do |component|
           add_to_load_path(app_root.join(component.to_s))
         end
