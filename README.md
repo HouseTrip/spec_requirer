@@ -36,6 +36,8 @@ require 'spec_requirer'
 
 SpecRequirer.setup(app_root: File.join(File.dirname(__FILE__), ".."),
                    components: ['models', 'services', 'presenters'])
+
+include SpecRequirer
 ```
 
 In a Rails app the `app_root` would be the `app` directory.
